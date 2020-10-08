@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Ejercicio 1 Practica DOM</title>
+
+    <script type="text/javascript" src="codigo.js"></script>
+  </head>
+
+  <body>
+    <div id="divisor">
+      <p id="primerParrafo">Este es mi primer parrafo.</p>
+    </div>
+    <button onclick="addNewParagraph()">Añadir nuevo parrafo</button>
+    <button onclick="insertNewParagraph()">Insertar nuevo parrafo</button>
+    <button onclick="replaceParagraph()">Reemplazar parrafo</button>
+    <button onclick="deleteParagraph()">Borrar parrafo</button>
+    <button onclick="cloneDiv()">Clonar parrafo</button>
+  </body>
+</html>
+
+<style>
+  button {
+    display: block;
+    margin-top: 5px;
+  }
+  #divisor {
+    background-color: aquamarine;
+  }
+</style>
