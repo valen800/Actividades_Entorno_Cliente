@@ -6,14 +6,14 @@ function addNewParagraph() {
 }
 
 function insertNewParagraph() {
-  var firstParagraph = document.getElementById("primerParrafo");
+  var firstParagraph = document.getElementsByTagName("p")[0];
   var p = document.createElement("p");
   p.innerHTML = "Parrafo insertado";
   insertAfter(firstParagraph, p);
 }
 
 function replaceParagraph() {
-  var firstParagraph = document.getElementById("primerParrafo");
+  var firstParagraph = document.getElementsByTagName("p")[0];
   if (firstParagraph.nextSibling) {
     firstParagraph.nextSibling.innerHTML = "Parrafo reemplazado";
   } else {
@@ -23,7 +23,7 @@ function replaceParagraph() {
 
 function deleteParagraph() {
   var div = document.getElementById("divisor");
-  var firstParagraph = document.getElementById("primerParrafo");
+  var firstParagraph = document.getElementsByTagName("p")[0];
   if (firstParagraph.nextSibling) {
     div.removeChild(firstParagraph.nextSibling);
   } else {
