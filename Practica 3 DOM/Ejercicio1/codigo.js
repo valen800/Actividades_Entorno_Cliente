@@ -1,21 +1,21 @@
 function addNewParagraph() {
   var div = document.getElementById("divisor");
   var p = document.createElement("p");
-  p.innerHTML = "Parrafo añadido";
+  p.textContent = "Parrafo añadido";
   div.appendChild(p);
 }
 
 function insertNewParagraph() {
   var firstParagraph = document.getElementsByTagName("p")[0];
   var p = document.createElement("p");
-  p.innerHTML = "Parrafo insertado";
+  p.textContent = "Parrafo insertado";
   insertAfter(firstParagraph, p);
 }
 
 function replaceParagraph() {
   var firstParagraph = document.getElementsByTagName("p")[0];
   if (firstParagraph.nextSibling) {
-    firstParagraph.nextSibling.innerHTML = "Parrafo reemplazado";
+    firstParagraph.nextSibling.textContent = "Parrafo reemplazado";
   } else {
     alert("No se puede modificar");
   }
