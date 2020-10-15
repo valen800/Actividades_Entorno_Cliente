@@ -37,9 +37,20 @@ function cloneList() {
   document.body.appendChild(div_clon);
 }
 
-function createSubListDOMLion() {}
+function createSubListDOMLion() {
+  var lifather = document.getElementsByTagName("li")[0];
 
-function createSubListInnerHTMLLion() {}
+  var nestedUl = document.createElement("ul");
+  var nestedLI = nestedUl.appendChild(document.createElement("li"));
+  nestedLI.appendChild(document.createTextNode("SubLeonDOM"));
+
+  lifather.appendChild(nestedUl);
+}
+
+function createSubListInnerHTMLLion() {
+  var lifather = document.getElementsByTagName("li")[0];
+  lifather.innerHTML += "<ul><li>SubLeonInnerHTML</li></ul>";
+}
 
 //e nodo tras el que se quiere insertar
 //i nodo que se quiere insertar
