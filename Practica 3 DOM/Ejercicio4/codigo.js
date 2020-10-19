@@ -1,5 +1,5 @@
 function countLinks() {
-    nLinks = 0;
+    var nLinks = 0;
     arrayElements = document.body.childNodes;
 
     for (let i = 0; i < arrayElements.length; i++) {
@@ -11,7 +11,7 @@ function countLinks() {
 }
 
 function countImg() {
-    nImg = 0;
+    var nImg = 0;
     arrayElements = document.body.childNodes;
 
     for (let i = 0; i < arrayElements.length; i++) {
