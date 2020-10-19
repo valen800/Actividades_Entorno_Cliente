@@ -1,6 +1,9 @@
-function createLink() {
-    var p = document.createElement("p")
-    p.textContent = "Google"
-    p.setAttribute("style", "background-color: red;");
-    document.body.appendChild(p)
+function initTag() {
+    document.getElementById("box").value = 0
+}
+
+function addTen() {
+    var box = document.getElementById("box").value
+    result = parseInt(box) + 10
+    document.getElementById("box").value = String(result)
 }
