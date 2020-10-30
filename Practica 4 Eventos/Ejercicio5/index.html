@@ -8,7 +8,8 @@
   <body>
     <form>
       <label>Introduce números:</label><br>
-      <input id="inputText" type="text"/>
+      <!--<input type="text"  value="" onkeyup="this.value=Numeros(this.value)" /> -->
+      <input type="text" id="inputText" onkeypress="return checkNumber(event)" />
     </form>
   </body>
 </html>
