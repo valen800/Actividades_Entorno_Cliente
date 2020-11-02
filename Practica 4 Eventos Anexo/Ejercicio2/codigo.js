@@ -1,5 +1,5 @@
 window.onload = function() {
-    var link = document.getElementById("link");
+    //var link = document.getElementById("link");
     var div = document.getElementById("divLink");
 
     div.addEventListener("click", event => {
