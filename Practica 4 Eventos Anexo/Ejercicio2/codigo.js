@@ -1,12 +1,10 @@
-var link = document.getElementById("link");
+window.onload = function() {
+    var link = document.getElementById("link");
+    var div = document.getElementById("divLink");
 
-/* link.addEventListener("click", function(event) {
-    event.preventDefault()
-}) */
+    div.addEventListener("click", event => {
+        event.stopPropagation();
+    });
+}
 
-window.addEventListener("beforeunload", function (e) {
-    var confirmationMessage = "Página cancelada";
-
-    e.returnValue = confirmationMessage;     // Gecko, Trident, Chrome 34+
-    return confirmationMessage;
-});
+//https://www.neoguias.com/diferencia-event-stoppropagation-event-preventdefault/
