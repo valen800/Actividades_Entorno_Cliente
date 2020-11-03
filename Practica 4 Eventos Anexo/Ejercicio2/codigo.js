@@ -2,7 +2,11 @@ window.onload = function() {
     var link = document.getElementById("link");
 
     link.addEventListener("click", event => {
-        event.preventDefault();
+        if (event.preventDefault) {
+            event.preventDefault();
+        } else {
+            event.returnValue = false;
+        }
     })
     
 

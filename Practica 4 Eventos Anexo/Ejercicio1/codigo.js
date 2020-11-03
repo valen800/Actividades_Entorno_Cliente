@@ -9,7 +9,7 @@ function checkInputs(event, form) {
         alert("Ingrese los datos requeridos");
         if (event.preventDefault) {
             event.preventDefault(); //Forma estandar
-        } else{
+        } else {
             event.returnValue = false; // Forma de IE evitar el submit
         }
     }
