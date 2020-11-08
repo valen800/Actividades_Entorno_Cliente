@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script type="text/javascript" src="codigo.js"></script>
+    <title>Ejercicio 1 Practica 5 Formulario</title>
+  </head>
+  <body> 
+    <form name="form" id="formID">
+      <label for="lName">
+        Nombre: <input type="text" id="name" autofocus>
+      </label>
+
+      <label for="lLastname">
+        Apellidos: <input type="text" id="lastname">
+      </label>
+
+      <label for="lPhone">
+        Teléfono: <input type="text" id="phone">
+      </label>
+
+      <label for="lDni">
+        Dni: <input type="text" id="dni">
+      </label>
+
+      <label for="lAge">
+        Edad: <input type="text" id="age">
+      </label>
+
+      <label for="lSex">
+        Sexo:
+        <input type="radio" id="Male" name="gender" value="Hombre"> Hombre
+        <input type="radio" id="Female" name="gender" value="Mujer"> Mujer
+      </label>
+
+      <label for="lPhoto">
+        Incluir mi foto: <input type="file" id="photo">
+      </label>
+
+      <label for="ladvertising">
+        <input type="checkbox" id="advertising"> Enviar publicidad
+      </label>
+
+      <label for="lSelect">
+        Elige tu afición favorita: 
+        <select name="hobby" id="hobby">
+          <option value="musica">Música</option>
+          <option value="Deportes">Deportes</option>
+          <option value="VideoJuegos">VideoJuegos</option>
+        </select>
+      </label>
+
+      <label for="lObservations">
+        Observaciones: 
+        <textarea id="observaciones" name="observaciones" rows="4" cols="50"></textarea>
+      </label>
+
+      <input type="submit" value="Guardar cambios">
+      <input type="reset" value="Borrar los datos introducidos">
+      
+    </form>
+  </body>
+</html>
+
+<style>
+  label {
+    white-space: pre-line;
+  }
+</style>
