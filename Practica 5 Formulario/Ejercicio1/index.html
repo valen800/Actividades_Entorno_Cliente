@@ -6,7 +6,7 @@
     <title>Ejercicio 1 Practica 5 Formulario</title>
   </head>
   <body> 
-    <form name="form" id="formID">
+    <form name="form" id="form">
       <label for="lName">
         Nombre: <input type="text" id="name" autofocus>
       </label>
@@ -16,11 +16,11 @@
       </label>
 
       <label for="lPhone">
-        Teléfono: <input type="text" id="phone">
+        Teléfono: <input type="text" id="IPhone" onkeypress="return checkNumber(event)">
       </label>
 
       <label for="lDni">
-        Dni: <input type="text" id="dni">
+        Dni: <input type="text" id="Idni">
       </label>
 
       <label for="lAge">
@@ -34,7 +34,8 @@
       </label>
 
       <label for="lPhoto">
-        Incluir mi foto: <input type="file" id="photo">
+        Incluir mi foto: <input type="file" id="iPhoto">
+        <img src="" id="preview" height="200" alt="Image preview...">
       </label>
 
       <label for="ladvertising">
@@ -46,17 +47,17 @@
         <select name="hobby" id="hobby">
           <option value="musica">Música</option>
           <option value="Deportes">Deportes</option>
-          <option value="VideoJuegos">VideoJuegos</option>
+          <option value="Lectura">Lectura</option>
         </select>
       </label>
 
       <label for="lObservations">
         Observaciones: 
-        <textarea id="observaciones" name="observaciones" rows="4" cols="50"></textarea>
+        <textarea id="observaciones" maxlength="150" name="observaciones" rows="4" cols="50"></textarea>
       </label>
 
-      <input type="submit" value="Guardar cambios">
-      <input type="reset" value="Borrar los datos introducidos">
+      <input type="submit" id="buttonSubmit" value="Guardar cambios">
+      <input type="reset" id="buttonReset" value="Borrar los datos introducidos">
       
     </form>
   </body>
