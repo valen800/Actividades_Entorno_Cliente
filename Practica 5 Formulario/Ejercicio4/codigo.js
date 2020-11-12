@@ -6,8 +6,10 @@ window.onload = function() {
 
     for (let i = 0; i < checkboxList.length; i++) {
         checkboxList[i].addEventListener("change", function() {
-            if (checkboxList[i].type = "checkbox" && checkboxList[i].checked) {
+            if (checkboxList[i].checked) {
                 changeFormat(parrafo, checkboxList[i].value);
+            } else {
+                resetFormat(parrafo, checkboxList[i].value)
             }
         });
         
@@ -19,5 +21,13 @@ function changeFormat(parrafo, checkboxValue) {
         parrafo.style.fontWeight = "bold";
     } else if (checkboxValue == "italic") {
         parrafo.style.fontStyle = "italic";
+    }
+}
+
+function resetFormat(parrafo, checkboxValue) {
+    if (checkboxValue == "bold") {
+        parrafo.style.fontWeight = "";
+    } else if (checkboxValue == "italic") {
+        parrafo.style.fontStyle = "";
     }
 }
