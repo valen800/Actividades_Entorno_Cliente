@@ -1,5 +1,14 @@
 window.onload = function() {
-    setMaxLenghtTextArea();
+    var InputName = document.getElementById("name");
+    setAutoFocus(InputName);
+
+    document.getElementById("observaciones").addEventListener("keypress", function() {
+        limita(150)
+    })
+
+    document.getElementById("IPhone").addEventListener("keypress", event => {
+        checkNumber(event);
+    })
 
     document.getElementById("iPhoto").addEventListener("change", function() {
         showImage();
@@ -22,13 +31,18 @@ window.onload = function() {
 function checkNumber(event) {
     if(event.charCode >= 48 && event.charCode <= 57) {
         return true;
+    } else {
+        if (event.preventDefault) {
+            event.preventDefault();
+        } else {
+            event.returnValue = false;
+        }
     }
-    return false;
 }
 
 function checkPhone(event) {
     var IPhone = document.getElementById("IPhone");
-    if (IPhone.value.length > 9) {
+    if (IPhone.value.length > 9 || IPhone.value.length < 9) {
         if (event.preventDefault) {
             IPhone.style.borderColor = "#FF0000";
             alert("Obligatio telefono 9 números")
@@ -87,15 +101,23 @@ function showImage() {
     }
 }
 
+function limita(maximoCaracteres) {
+    var elemento = document.getElementById("observaciones");
+    if(elemento.value.length >= maximoCaracteres ) {
+        if (event.preventDefault) {
+            event.preventDefault();
+        } else {
+            event.returnValue = false;
+        }
+    }
+    else {
+      return true;
+    }
+  }
+
 function isFileImage(file) {
     return file && file['type'].split('/')[0] === 'image';
 }
-
-/* function isFileImage(file) {
-    const acceptedImageTypes = ['image/gif', 'image/jpeg', 'image/png'];
- 
-    return file && acceptedImageTypes.includes(file['type'])
-} */
 
 function resetForm() {
     document.getElementById("form").reset();
@@ -103,4 +125,8 @@ function resetForm() {
 
 function setMaxLenghtTextArea() {
     document.getElementById("observaciones").maxLength = "150"
+}
+
+function setAutoFocus(element) {
+    element.focus();
 }
