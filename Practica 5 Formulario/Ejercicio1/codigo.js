@@ -1,4 +1,6 @@
 window.onload = function() {
+    setMaxLenghtTextArea();
+
     document.getElementById("iPhoto").addEventListener("change", function() {
         showImage();
     })
@@ -10,6 +12,10 @@ window.onload = function() {
     document.getElementById("buttonSubmit").addEventListener("click" , event => {
         checkDni(event);
         checkPhone(event);
+    })
+
+    document.getElementById("buttonReset").addEventListener("click", function() {
+        resetForm();
     })
 }
 
@@ -74,4 +80,12 @@ function showImage() {
     } else {
         preview.src = "";
     }
+}
+
+function resetForm() {
+    document.getElementById("form").reset();
+}
+
+function setMaxLenghtTextArea() {
+    document.getElementById("observaciones").maxLength = "150"
 }
