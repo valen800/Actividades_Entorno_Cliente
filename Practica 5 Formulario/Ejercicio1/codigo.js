@@ -67,20 +67,35 @@ function showDataHobbies() {
 }
 
 function showImage() {
-    var preview = document.getElementById("preview");
+
     var file = document.getElementById("iPhoto").files[0];
     var reader = new FileReader();
+    var preview = document.getElementById("preview");
 
-    reader.onloadend = function() {
-        preview.src = reader.result;
-    }
-
-    if (file) {
-        reader.readAsDataURL(file);
+    if (isFileImage(file)) {
+        reader.onloadend = function() {
+            preview.src = reader.result;
+        }
+    
+        if (file) {
+            reader.readAsDataURL(file);
+        } else {
+            preview.src = "";
+        }   
     } else {
-        preview.src = "";
+        alert("El fichero no es una imagen.")
     }
 }
+
+function isFileImage(file) {
+    return file && file['type'].split('/')[0] === 'image';
+}
+
+/* function isFileImage(file) {
+    const acceptedImageTypes = ['image/gif', 'image/jpeg', 'image/png'];
+ 
+    return file && acceptedImageTypes.includes(file['type'])
+} */
 
 function resetForm() {
     document.getElementById("form").reset();
