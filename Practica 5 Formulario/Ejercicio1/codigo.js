@@ -3,7 +3,7 @@ window.onload = function() {
     setAutoFocus(InputName);
 
     document.getElementById("Tobservaciones").addEventListener("keypress", function() {
-        limita(150)
+        limita(150, this)
     })
 
     document.getElementById("IPhone").addEventListener("keypress", event => {
@@ -11,11 +11,11 @@ window.onload = function() {
     })
 
     document.getElementById("IPhoto").addEventListener("change", function() {
-        showImage();
+        showImage(this);
     })
 
     document.getElementById("Shobby").addEventListener("change", function() {
-        showDataHobbies();
+        showDataHobbies(this);
     })
 
     document.getElementById("buttonSubmit").addEventListener("click" , event => {
@@ -81,19 +81,19 @@ function checkDni(event) {
     }
 }
 
-function showDataHobbies() {
-    var hobbyObjt = document.getElementById("Shobby");
+function showDataHobbies(element) {
+    //var hobbyObjt = document.getElementById("Shobby");
 
     alert(
-        "La longitud de la lista es " + hobbyObjt.length + "\n" + 
-        "El índice seleccionado es el " + hobbyObjt.selectedIndex + "\n" +
-        "El valor del índice seleccionado es lectura " + hobbyObjt.value
+        "La longitud de la lista es " + element.length + "\n" + 
+        "El índice seleccionado es el " + element.selectedIndex + "\n" +
+        "El valor del índice seleccionado es lectura " + element.value
     )
 }
 
-function showImage() {
+function showImage(element) {
 
-    var file = document.getElementById("IPhoto").files[0];
+    var file = element.files[0];
     var reader = new FileReader();
     var preview = document.getElementById("preview"); // img que se cargará.
 
@@ -112,8 +112,8 @@ function showImage() {
     }
 }
 
-function limita(maximoCaracteres) {
-    var elemento = document.getElementById("Tobservaciones");
+function limita(maximoCaracteres, elemento) {
+
     if(elemento.value.length >= maximoCaracteres ) {
         if (event.preventDefault) {
             event.preventDefault();
