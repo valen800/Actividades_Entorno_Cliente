@@ -3,12 +3,14 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <script type="text/javascript" src="codigo.js"></script>
+    <link rel="stylesheet" href="styles.css">
     <title>Ejercicio 2 Practica 5 Formulario</title>
   </head>
   <body>
       <p>Este párrafo cambiará de color con la opción seleccionada del cuadro de lista</p>
       <form name="form" id="form">
         <select name="select" id="select">
+          <option value="0" selected disabled hidden>Select your option: </option>
           <option value="green">Verde</option>
           <option value="blue">Azul</option>
           <option value="red">Rojo</option>
@@ -16,9 +18,3 @@
       </form>
   </body>
 </html>
-
-<style>
-  label {
-    white-space: pre-line;
-  }
-</style>

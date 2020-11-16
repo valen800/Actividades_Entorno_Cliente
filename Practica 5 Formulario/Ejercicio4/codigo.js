@@ -1,6 +1,4 @@
 window.onload = function() {
-    /* var checkBoxBold = document.getElementById("checkBoxBold");
-    var checkBoxCursive = document.getElementById("checkBoxCursive"); */
     var checkboxList = document.getElementsByTagName("input");
     var parrafo = document.getElementsByTagName("p")[0];
 
@@ -12,7 +10,6 @@ window.onload = function() {
                 resetFormat(parrafo, checkboxList[i].value)
             }
         });
-        
     }
 }
 
@@ -26,8 +23,8 @@ function changeFormat(parrafo, checkboxValue) {
 
 function resetFormat(parrafo, checkboxValue) {
     if (checkboxValue == "bold") {
-        parrafo.style.fontWeight = "";
+        parrafo.style.fontWeight = "normal";
     } else if (checkboxValue == "italic") {
-        parrafo.style.fontStyle = "";
+        parrafo.style.fontStyle = "normal";
     }
 }

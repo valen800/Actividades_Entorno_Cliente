@@ -2,29 +2,30 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="styles.css">
     <script type="text/javascript" src="codigo.js"></script>
     <title>Ejercicio 1 Practica 5 Formulario</title>
   </head>
   <body> 
     <form name="form" id="form">
       <label for="lName">
-        Nombre: <input type="text" id="name">
+        Nombre: <input type="text" id="Iname" name="name">
       </label>
 
       <label for="lLastname">
-        Apellidos: <input type="text" id="lastname">
+        Apellidos: <input type="text" id="Ilastname" name="Ilastname">
       </label>
 
       <label for="lPhone">
-        Teléfono: <input type="text" id="IPhone">
+        Teléfono: <input type="text" id="IPhone" name="IPhone">
       </label>
 
       <label for="lDni">
-        Dni: <input type="text" id="Idni">
+        Dni: <input type="text" id="Idni" name="Idni">
       </label>
 
       <label for="lAge">
-        Edad: <input type="text" id="age">
+        Edad: <input type="text" id="Iage" name="Iage">
       </label>
 
       <label for="lSex">
@@ -34,17 +35,18 @@
       </label>
 
       <label for="lPhoto">
-        Incluir mi foto: <input type="file" id="iPhoto">
+        Incluir mi foto: <input type="file" id="IPhoto" name="IPhoto">
         <img src="" id="preview" height="200" alt="Image preview...">
       </label>
 
       <label for="ladvertising">
-        <input type="checkbox" id="advertising"> Enviar publicidad
+        <input type="checkbox" id="Iadvertising" name="Iadvertising"> Enviar publicidad
       </label>
 
       <label for="lSelect">
         Elige tu afición favorita: 
-        <select name="hobby" id="hobby">
+        <select name="hobby" id="Shobby" name="Shobby">
+          <option value="0" selected disabled hidden>Select your option: </option> <!-- Solucion no carga el primer elemento del select -->
           <option value="musica">Música</option>
           <option value="Deportes">Deportes</option>
           <option value="Lectura">Lectura</option>
@@ -53,18 +55,12 @@
 
       <label for="lObservations">
         Observaciones: 
-        <textarea id="observaciones" name="observaciones" rows="4" cols="50"></textarea>
+        <textarea id="Tobservaciones" name="Tobservaciones" rows="4" cols="50"></textarea>
       </label>
 
-      <input type="submit" id="buttonSubmit" value="Guardar cambios">
-      <input type="button" id="buttonReset" value="Borrar los datos introducidos">
+      <input type="submit" id="buttonSubmit" name="buttonSubmit" value="Guardar cambios">
+      <input type="button" id="buttonReset" name="buttonReset" value="Borrar los datos introducidos">
       
     </form>
   </body>
 </html>
-
-<style>
-  label {
-    white-space: pre-line;
-  }
-</style>

@@ -1,8 +1,8 @@
 window.onload = function() {
-    var InputName = document.getElementById("name");
+    var InputName = document.getElementById("Iname");
     setAutoFocus(InputName);
 
-    document.getElementById("observaciones").addEventListener("keypress", function() {
+    document.getElementById("Tobservaciones").addEventListener("keypress", function() {
         limita(150)
     })
 
@@ -10,17 +10,17 @@ window.onload = function() {
         checkNumber(event);
     })
 
-    document.getElementById("iPhoto").addEventListener("change", function() {
+    document.getElementById("IPhoto").addEventListener("change", function() {
         showImage();
     })
 
-    document.getElementById("hobby").addEventListener("change", function() {
+    document.getElementById("Shobby").addEventListener("change", function() {
         showDataHobbies();
     })
 
     document.getElementById("buttonSubmit").addEventListener("click" , event => {
         checkDni(event);
-        checkPhone(event);
+        checkLenghtAndFormatPhone(event);
     })
 
     document.getElementById("buttonReset").addEventListener("click", function() {
@@ -40,16 +40,26 @@ function checkNumber(event) {
     }
 }
 
-function checkPhone(event) {
+function checkPhoneNumberIrregularExpresions(phoneNumber) { //Check format of phone number.
+    
+    if (!(/^\d{9}$/.test(phoneNumber))) { // Expresion regular para comprobar si es mas de 9 numeros
+        return true;
+    }
+
+    return false;
+}
+
+function checkLenghtAndFormatPhone(event) {
     var IPhone = document.getElementById("IPhone");
-    if (IPhone.value.length > 9 || IPhone.value.length < 9) {
+
+    if (checkPhoneNumberIrregularExpresions(IPhone.value) /* IPhone.value.length > 9 || IPhone.value.length < 9 ||  */) {
         if (event.preventDefault) {
             IPhone.style.borderColor = "#FF0000";
-            alert("Obligatio telefono 9 números")
+            alert("Número demasiado largo o con mal formato")
             event.preventDefault();
         } else {
             IPhone.style.borderColor = "#FF0000";
-            alert("Obligatio telefono 9 números")
+            alert("Número demasiado largo o con mal formato")
             event.returnValue = false;
         }
     }
@@ -57,6 +67,7 @@ function checkPhone(event) {
 
 function checkDni(event) {
     var IDni = document.getElementById("Idni");
+
     if (IDni.value == "") {
         if (event.preventDefault) {
             IDni.style.borderColor = "#FF0000";
@@ -71,7 +82,7 @@ function checkDni(event) {
 }
 
 function showDataHobbies() {
-    var hobbyObjt = document.getElementById("hobby");
+    var hobbyObjt = document.getElementById("Shobby");
 
     alert(
         "La longitud de la lista es " + hobbyObjt.length + "\n" + 
@@ -82,9 +93,9 @@ function showDataHobbies() {
 
 function showImage() {
 
-    var file = document.getElementById("iPhoto").files[0];
+    var file = document.getElementById("IPhoto").files[0];
     var reader = new FileReader();
-    var preview = document.getElementById("preview");
+    var preview = document.getElementById("preview"); // img que se cargará.
 
     if (isFileImage(file)) {
         reader.onloadend = function() {
@@ -102,7 +113,7 @@ function showImage() {
 }
 
 function limita(maximoCaracteres) {
-    var elemento = document.getElementById("observaciones");
+    var elemento = document.getElementById("Tobservaciones");
     if(elemento.value.length >= maximoCaracteres ) {
         if (event.preventDefault) {
             event.preventDefault();
@@ -124,7 +135,7 @@ function resetForm() {
 }
 
 function setMaxLenghtTextArea() {
-    document.getElementById("observaciones").maxLength = "150"
+    document.getElementById("Tobservaciones").maxLength = "150"
 }
 
 function setAutoFocus(element) {
