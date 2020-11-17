@@ -1,9 +1,6 @@
 window.onload = function() {
   var radioGroup = document.getElementsByName("hobby");
   var btnSubmit = document.getElementById("btnSubmit");
-  var inputFecha = document.getElementById("fechaID");
-  var inputMusico = document.getElementById("musicoID");
-  var inputAlbum = document.getElementById("albumID");
 
   for (let i = 0; i < radioGroup.length; i++) {
     radioGroup[i].addEventListener("change", function() {
@@ -12,6 +9,9 @@ window.onload = function() {
   }
 
   btnSubmit.addEventListener("click", function() {
+    var inputFecha = document.getElementById("fechaID");
+    var inputMusico = document.getElementById("musicoID");
+    var inputAlbum = document.getElementById("albumID");
     var lastCaract = inputFecha.value.substr(inputFecha.value.length - 4);
 
     if (checkDate()) {
@@ -82,9 +82,31 @@ function createFieldMusic() {
   inputMusico.setAttribute("type", "text");
   inputMusico.setAttribute("id", "musicoID");
 
+  inputMusico.addEventListener("keypress" , event => {
+    checkLetterM(event)
+  })
+
   form.appendChild(labelMusico);
   form.appendChild(inputMusico);
   form.appendChild(document.createElement("BR"));
+}
+
+function checkLetterM(event) {
+    var inputFecha = document.getElementById("fechaID");
+    var inputMusico = document.getElementById("musicoID");
+    var inputAlbum = document.getElementById("albumID");
+
+  if (event.code == "KeyM") {
+    inputFecha.value = "30/11/1982";
+    inputMusico.value = "Mickel Jackson";
+    inputAlbum.value = "Thriller";
+  } else {
+    if (event.preventDefault) {
+      event.preventDefault(); 
+    } else {
+      event.returnValue = false;
+    }
+  }
 }
 
 function createFieldAlbum() {
