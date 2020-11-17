@@ -82,7 +82,6 @@ function checkDni(event) {
 }
 
 function showDataHobbies(element) {
-    //var hobbyObjt = document.getElementById("Shobby");
 
     alert(
         "La longitud de la lista es " + element.length + "\n" + 

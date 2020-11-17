@@ -54,11 +54,11 @@ function createSubListInnerHTMLLion() {
 
 //e nodo tras el que se quiere insertar
 //i nodo que se quiere insertar
-function insertAfter(e, i) {
+function insertAfter(e, elementToInsert) {
   if (e.nextSibling) {
     //si existe el siguiente nodo entra
-    e.parentNode.insertBefore(i, e.nextSibling); //Pasa al siguiente nodo y lo inserta antes
+    e.parentNode.insertBefore(elementToInsert, e.nextSibling); //Pasa al siguiente nodo y lo inserta antes
   } else {
-    e.parentNode.appendChild(i); //Se añade el nodo después de los hijos existentes
+    e.parentNode.appendChild(elementToInsert); //Se añade el nodo después de los hijos existentes
   }
 }
